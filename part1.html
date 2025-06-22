@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Responsive Restaurant Menu</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f9f9f9;
+    }
+
+    .menu-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .menu-section {
+      border: 2px solid #333;
+      padding: 20px;
+      position: relative;
+      flex: 1 1 100%;
+      background-color: #ffeedd; /* default fallback */
+      min-height: 200px;
+    }
+
+    .menu-section .title {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    .chicken {
+      background-color: #fff0f0;
+    }
+
+    .beef {
+      background-color: #f0fff0;
+    }
+
+    .sushi {
+      background-color: #f0f8ff;
+    }
+
+    /* Desktop: 3 in a row */
+    @media (min-width: 992px) {
+      .menu-section {
+        flex: 1 1 calc(33.333% - 13.33px); /* for 3 items with gaps */
+      }
+    }
+
+    /* Tablet: 2 on top, 1 below */
+    @media (min-width: 768px) and (max-width: 991px) {
+      .menu-section {
+        flex: 1 1 calc(50% - 10px);
+      }
+
+      .menu-section:nth-child(3) {
+        flex-basis: 100%;
+      }
+    }
+
+    /* Mobile: stack vertically (default behavior already) */
+  </style>
+</head>
+<body>
+
+  <h1>Our Menu</h1>
+  <div class="menu-container">
+    <div class="menu-section chicken">
+      <div class="title">Chicken</div>
+      <p>Succulent chicken cooked with a blend of spices and herbs, served with a light garlic butter sauce and seasonal vegetables.</p>
+    </div>
+    <div class="menu-section beef">
+      <div class="title">Beef</div>
+      <p>Premium cuts of beef, marinated in a rich blend of spices and flame-grilled for bold flavor. Served with a house-made dipping sauce.</p>
+    </div>
+    <div class="menu-section sushi">
+      <div class="title">Sushi</div>
+      <p>Freshly prepared sushi made with seasoned rice, seaweed, and a variety of fresh toppings like tuna, salmon, cucumber, and avocado. Served with soy sauce, wasabi, and pickled ginger for a traditional Japanese taste.</p>
+    </div>
+  </div>
+
+</body>
+</html>
